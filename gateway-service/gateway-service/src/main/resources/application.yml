@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: gateway-service
+  zipkin:
+    base-url: http://localhost:9076/
 
 eureka:
   instance:
@@ -34,4 +36,6 @@ management:
   endpoints:
     web:
       exposure:
-        include=*:
+        include: '*'
+
+

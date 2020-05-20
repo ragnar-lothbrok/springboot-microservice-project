@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: product-service
+  zipkin:
+    base-url: http://localhost:9076/
   jpa:
     show-sql: true
     hibernate:
@@ -26,4 +28,4 @@ management:
   endpoints:
     web:
       exposure:
-        include=*:
+        include: '*'
