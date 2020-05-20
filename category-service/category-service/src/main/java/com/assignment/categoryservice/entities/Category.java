@@ -4,7 +4,6 @@ import com.assignment.categoryservice.dto.CategoryDto;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.Objects;
 
 @Entity
 @Table(name = "category")
@@ -57,12 +56,7 @@ public class Category {
 
     public static Category build(CategoryDto categoryDto) {
         Category category = new Category();
-        if(Objects.nonNull(categoryDto.getId())) {
-            category.setId(categoryDto.getId());
-            category.setCreatedAt(categoryDto.getCreatedAt());
-        } else{
-            category.setCreatedAt(Instant.now().toEpochMilli());
-        }
+        category.setCreatedAt(Instant.now().toEpochMilli());
         category.setCategory(categoryDto.getCategory());
         category.setModifiedAt(Instant.now().toEpochMilli());
         return category;

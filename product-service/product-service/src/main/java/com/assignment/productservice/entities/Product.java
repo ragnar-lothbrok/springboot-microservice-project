@@ -1,13 +1,24 @@
 package com.assignment.productservice.entities;
 
-@Tabl
-public class ProductDto {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "product")
+public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String name;
     private Float price;
+
+    @Column(name = "created_at")
     private Long createdAt;
+
+    @Column(name = "modified_at")
     private Long modifiedAt;
+
     private Integer quantity;
 
     public Long getId() {

@@ -8,10 +8,6 @@ public class CategoryDto {
 
     private String category;
 
-    private Long createdAt;
-
-    private Long modifiedAt;
-
     public Long getId() {
         return id;
     }
@@ -28,29 +24,10 @@ public class CategoryDto {
         this.category = category;
     }
 
-    public Long getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Long createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Long getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public void setModifiedAt(Long modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
     public static CategoryDto build(Category category) {
         CategoryDto categoryDto = new CategoryDto();
         categoryDto.setId(category.getId());
         categoryDto.setCategory(category.getCategory());
-        categoryDto.setCreatedAt(category.getCreatedAt());
-        categoryDto.setModifiedAt(category.getModifiedAt());
-        categoryDto.setCreatedAt(category.getCreatedAt());
         return categoryDto;
     }
 
@@ -59,8 +36,6 @@ public class CategoryDto {
         return "CategoryDto{" +
                 "id=" + id +
                 ", category='" + category + '\'' +
-                ", createdAt=" + createdAt +
-                ", modifiedAt=" + modifiedAt +
                 '}';
     }
 }

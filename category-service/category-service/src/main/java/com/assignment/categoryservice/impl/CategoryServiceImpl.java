@@ -24,8 +24,6 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryDto save(CategoryDto categoryDto) {
         LOGGER.info("Saving data for category = {} ", categoryDto);
         categoryDto.setId(null);
-        categoryDto.setCreatedAt(null);
-        categoryDto.setModifiedAt(null);
         return CategoryDto.build(categoryRepository.save(Category.build(categoryDto)));
     }
 

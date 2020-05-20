@@ -1,12 +1,12 @@
 package com.assignment.productservice.dto;
 
+import com.assignment.productservice.entities.Product;
+
 public class ProductDto {
 
     private Long id;
     private String name;
     private Float price;
-    private Long createdAt;
-    private Long modifiedAt;
     private Integer quantity;
 
     public Long getId() {
@@ -33,27 +33,30 @@ public class ProductDto {
         this.price = price;
     }
 
-    public Long getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Long createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Long getModifiedAt() {
-        return modifiedAt;
-    }
-
-    public void setModifiedAt(Long modifiedAt) {
-        this.modifiedAt = modifiedAt;
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public static ProductDto build(Product product) {
+        ProductDto productDto = new ProductDto();
+        productDto.setId(product.getId());
+        productDto.setName(product.getName());
+        productDto.setPrice(product.getPrice());
+        productDto.setQuantity(product.getQuantity());
+        return productDto;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
     }
 }

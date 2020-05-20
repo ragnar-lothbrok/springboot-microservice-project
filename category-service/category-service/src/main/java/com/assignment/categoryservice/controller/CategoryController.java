@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/category")
+@RequestMapping(value = "/category/v1")
 public class CategoryController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CategoryController.class);
@@ -19,7 +19,7 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @PostMapping
-    public CategoryDto create(@RequestBody  CategoryDto categoryDto) {
+    public CategoryDto create(@RequestBody CategoryDto categoryDto) {
         LOGGER.info("Request received = {} ", categoryDto);
         return categoryService.save(categoryDto);
     }
