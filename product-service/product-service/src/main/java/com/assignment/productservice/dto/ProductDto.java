@@ -1,7 +1,9 @@
 package com.assignment.productservice.dto;
 
 import com.assignment.productservice.entities.Product;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProductDto {
 
     private Long id;

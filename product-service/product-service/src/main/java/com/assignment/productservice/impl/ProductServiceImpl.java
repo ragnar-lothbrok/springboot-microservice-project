@@ -59,10 +59,11 @@ public class ProductServiceImpl implements ProductService {
         if (productOptional.isPresent()) {
             product = productOptional.get();
             productRepository.deleteById(productId);
+            return ProductDto.build(product);
         } else {
             LOGGER.info("Product not found for Id = {} ", productId);
         }
-        return ProductDto.build(product);
+        return new ProductDto();
     }
 
     @Override

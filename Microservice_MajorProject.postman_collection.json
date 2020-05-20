@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "2418be89-424d-41f5-8581-b7df302bc3df",
+		"name": "Microservice_MajorProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ADD Category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"category\": \"Clothing\",\r\n\t\"createdAt\": 1589984244094,\r\n\t\"modifiedAt\": 1589984244095\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/category/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"category",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"Nike Shoes\",\r\n\t\"price\": 100,\r\n\t\"quantity\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/product/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\" : 5,\r\n\t\"name\": \"Sports Shoes\",\r\n\t\"price\": 1000,\r\n\t\"quantity\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/product/v1/51",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"v1",
+						"51"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/product/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Product",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/product/v1/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"product",
+						"v1",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/category/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"category",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
