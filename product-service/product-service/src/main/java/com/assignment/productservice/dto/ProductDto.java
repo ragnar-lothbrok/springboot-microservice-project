@@ -10,6 +10,7 @@ public class ProductDto {
     private String name;
     private Float price;
     private Integer quantity;
+    private String category;
 
     public Long getId() {
         return id;
@@ -49,6 +50,7 @@ public class ProductDto {
         productDto.setName(product.getName());
         productDto.setPrice(product.getPrice());
         productDto.setQuantity(product.getQuantity());
+        productDto.setCategory(product.getCategory());
         return productDto;
     }
 
@@ -59,6 +61,15 @@ public class ProductDto {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
+                ", category='" + category + '\'' +
                 '}';
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

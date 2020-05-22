@@ -1,5 +1,6 @@
 package com.assignment.productservice.impl;
 
+import com.assignment.productservice.CategoryClient;
 import com.assignment.productservice.dto.ProductDto;
 import com.assignment.productservice.entities.Product;
 import com.assignment.productservice.repository.ProductRepository;
@@ -22,6 +23,9 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private CategoryClient categoryClient;
+
     @Override
     public ProductDto save(ProductDto productDto) {
         productDto.setId(null);
@@ -31,6 +35,8 @@ public class ProductServiceImpl implements ProductService {
         product.setModifiedAt(Instant.now().toEpochMilli());
         product.setPrice(productDto.getPrice());
         product.setQuantity(productDto.getQuantity());
+        product.setCategory(productDto.getCategory());
+        categoryClient.categoryAvailable(productDto.getCategory());
         LOGGER.info("Product to be saved = {} ", productDto);
         return ProductDto.build(productRepository.save(product));
     }
@@ -49,6 +55,8 @@ public class ProductServiceImpl implements ProductService {
         product.setModifiedAt(Instant.now().toEpochMilli());
         product.setPrice(productDto.getPrice());
         product.setQuantity(productDto.getQuantity());
+        product.setCategory(productDto.getCategory());
+        categoryClient.categoryAvailable(productDto.getCategory());
         return ProductDto.build(productRepository.save(product));
     }
 
@@ -68,7 +76,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> products() {
-        LOGGER.info("Fetching all categories.");
+        LOGGER.info("Fetching all products.");
         return productRepository.findAll().stream().map(product -> ProductDto.build(product)).collect(Collectors.toList());
     }
 }

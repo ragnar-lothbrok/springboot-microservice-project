@@ -19,6 +19,9 @@ public class Product {
     @Column(name = "modified_at")
     private Long modifiedAt;
 
+    @Column(name = "category")
+    private String category;
+
     private Integer quantity;
 
     public Long getId() {
@@ -67,5 +70,13 @@ public class Product {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
